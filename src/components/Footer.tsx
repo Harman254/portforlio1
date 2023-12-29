@@ -1,7 +1,4 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/WxyNEB3KJ2A
- */
+
 import Link from "next/link"
 
 export default function Footer() {
@@ -9,29 +6,27 @@ export default function Footer() {
         <footer className="flex flex-col gap-6 bg-gray-900 text-white p-6 md:p-12">
             <div className="flex flex-col md:flex-row justify-between items-start">
                 <div className="mb-4 md:mb-0">
-                    <h3 className="text-lg font-semibold">My Portfolio</h3>
+                    <h3 className="text-lg font-semibold">Haman Malova</h3>
                     <p className="text-sm mt-2">Building experiences for the web and beyond.</p>
                 </div>
                 <nav className="flex flex-col md:flex-row gap-4 md:gap-8">
-                    <Link className="text-sm hover:underline" href="#">
+                    <Link className="text-sm hover:underline" href="/">
                         Home
                     </Link>
-                    <Link className="text-sm hover:underline" href="#">
+                    <Link className="text-sm hover:underline" href="/about">
                         About
                     </Link>
-                    <Link className="text-sm hover:underline" href="#">
-                        Services
-                    </Link>
-                    <Link className="text-sm hover:underline" href="#">
+
+                    <Link className="text-sm hover:underline" href="/projects">
                         Projects
                     </Link>
-                    <Link className="text-sm hover:underline" href="#">
+                    <Link className="text-sm hover:underline" href="/contact">
                         Contact
                     </Link>
                 </nav>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-center">
-                <p className="text-sm mb-4 md:mb-0">© 2023 by My Portfolio.</p>
+                <p className="text-sm mb-4 md:mb-0">© 2023 by Haman Malova.</p>
                 <div className="flex space-x-4">
                     <Link className="text-lg" href="#">
                         <FacebookIcon className="w-4 h-4" />

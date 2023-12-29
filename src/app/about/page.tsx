@@ -1,7 +1,4 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/9KilD0rcMzw
- */
+
 import { Badge } from "@/components/ui/badge"
 import { CardHeader, CardContent, Card, CardFooter } from "@/components/ui/card"
 import { Avatar } from "@/components/ui/avatar"
@@ -9,9 +6,9 @@ import Link from "next/link"
 
 export default function Page() {
     return (
-        <>
-            <header className="px-4 sm:px-6 py-4 bg-[#ffffff] flex items-center justify-between">
-                <div className="text-2xl sm:text-3xl font-bold">Your Name or Logo</div>
+        <div className="container mx-auto">
+            <header className="px-4 sm:px-6 py-4  flex items-center justify-between">
+                <div className="text-2xl sm:text-3xl font-bold">Haman Malova</div>
             </header>
             <main className="px-4 sm:px-6 py-12 space-y-6 sm:space-y-12">
                 <section className="space-y-2 sm:space-y-4">
@@ -151,7 +148,7 @@ export default function Page() {
                     </div>
                 </section>
             </main>
-        </>
+        </div>
     )
 }
 

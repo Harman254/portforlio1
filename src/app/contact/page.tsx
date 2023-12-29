@@ -12,7 +12,7 @@ import Link from "next/link"
 
 export default function Page() {
     return (
-        <main className="p-6 md:p-12 bg-[#ffffff] dark:bg-[#000000] min-h-screen">
+        <main className="p-6 md:p-12 container mx-auto min-h-screen">
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6 max-w-6xl mx-auto">
                 <div className="w-full md:w-1/2 space-y-8">
                     <h1 className="text-4xl font-bold">Contact Me</h1>
