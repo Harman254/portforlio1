@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Footer() {
     return (
-        <footer className="flex flex-col gap-6  text-accent-foreground border p-6 md:p-12">
+        <footer className="flex flex-col gap-6  text-accent-foreground  container mx-auto p-6 md:p-12">
             <div className="flex flex-col md:flex-row justify-between items-start">
                 <div className="mb-4 md:mb-0">
                     <h3 className="text-lg font-semibold">Haman Malova</h3>
@@ -34,7 +34,7 @@ export default function Footer() {
                     <Link className="text-lg" href="https://twitter.com/_Harman254">
                         <TwitterIcon className="w-4 h-4" />
                     </Link>
-                    <Link className="text-lg" href="https://github.com/_Harman254">
+                    <Link className="text-lg" href="https://github.com/Harman254">
                         <GithubIcon className="w-4 h-4" />
                     </Link>
                 </div>
