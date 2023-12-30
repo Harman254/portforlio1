@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 import { SheetTrigger, SheetContent, Sheet, SheetClose } from "@/components/ui/sheet"
 import Link from "next/link"
 import { NavigationMenuLink, NavigationMenuList, NavigationMenu } from "@/components/ui/navigation-menu"
+import { ModeToggle } from "../ModeToggle"
 
 export default function NavBar() {
     const router = useRouter()
@@ -23,6 +24,7 @@ export default function NavBar() {
                             <span className="sr-only">Portfolio</span>
                         </Link>
                     </SheetClose>
+                    <ModeToggle />
                     <div className="grid gap-2 py-6">
                         <SheetClose asChild>
                             <Button variant="link" className="flex w-full items-center py-2 text-lg font-semibold" onClick={() => {
@@ -55,6 +57,7 @@ export default function NavBar() {
             </Link>
             <NavigationMenu className="hidden lg:flex">
                 <NavigationMenuList>
+                    <ModeToggle />
                     <NavigationMenuLink asChild>
                         <Link
                             className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"

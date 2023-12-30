@@ -4,6 +4,7 @@ import './globals.css'
 import { ClerkProviderContext } from '@/providers/clerk'
 import Navbar from '@/components/Nav/Navbar'
 import Footer from '@/components/Footer'
+import { ThemeProvider } from '@/providers/theme'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -22,10 +23,19 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className}`} >
         <ClerkProviderContext>
-          <Navbar />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
 
-          {children}
-          <Footer />
+          >
+
+            <Navbar />
+
+            {children}
+            <Footer />
+          </ThemeProvider>
 
         </ClerkProviderContext>
       </body>
