@@ -6,11 +6,11 @@ import { Button } from "@/components/ui/button"
 export default function Page() {
     return (
         <main className="container min-h-screen mx-auto p-4 md:p-6 lg:p-8 space-y-8">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">My Projects</h1>
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary text-center">My Projects</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <Card>
                     <CardHeader>
-                        <CardTitle className="text-lg md:text-xl lg:text-2xl font-bold">Project 1</CardTitle>
+                        <CardTitle className="text-lg md:text-xl lg:text-2xl  font-bold">Project 1</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <img
@@ -88,7 +88,7 @@ export default function Page() {
                 </Card>
             </div>
             <div className="flex justify-center">
-                <Button className="bg-blue-500 text-white px-4 py-2 rounded-md">Load More</Button>
+                <Button className="bg-primary text-md text-white px-4 py-2 rounded-md">Load More</Button>
             </div>
         </main>
     )

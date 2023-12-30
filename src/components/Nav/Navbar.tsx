@@ -1,7 +1,7 @@
 "use client"
 import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
-import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet"
+import { SheetTrigger, SheetContent, Sheet, SheetClose } from "@/components/ui/sheet"
 import Link from "next/link"
 import { NavigationMenuLink, NavigationMenuList, NavigationMenu } from "@/components/ui/navigation-menu"
 
@@ -12,29 +12,44 @@ export default function NavBar() {
             <Sheet>
                 <SheetTrigger asChild>
                     <Button className="lg:hidden" size="icon" variant="outline">
-                        <MenuIcon className="h-6 w-6" />
+                        <MenuIcon className="h-6 w-6 " />
                         <span className="sr-only">Toggle navigation menu</span>
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="left">
-                    <Link href="#">
-                        <MountainIcon className="h-6 w-6" />
-                        <span className="sr-only">Portfolio</span>
-                    </Link>
+                    <SheetClose asChild>
+                        <Link href="/">
+                            <MountainIcon className="h-6 w-6" />
+                            <span className="sr-only">Portfolio</span>
+                        </Link>
+                    </SheetClose>
                     <div className="grid gap-2 py-6">
-                        <Link className="flex w-full items-center py-2 text-lg font-semibold" href="/about">
-                            About
-                        </Link>
-                        <Link className="flex w-full items-center py-2 text-lg font-semibold" href="/projects">
-                            Projects
-                        </Link>
-                        <Link className="flex w-full items-center py-2 text-lg font-semibold" href="/contact">
-                            Contact
-                        </Link>
+                        <SheetClose asChild>
+                            <Button variant="link" className="flex w-full items-center py-2 text-lg font-semibold" onClick={() => {
+                                router.push("/about")
+                            }} >
+                                About
+                            </Button>
+                        </SheetClose>
+                        <SheetClose asChild>
+                            <Button variant="link" className="flex w-full items-center py-2 text-lg font-semibold" onClick={() => {
+                                router.push("/projects")
+                            }} >
+                                Projects
+                            </Button>
+                        </SheetClose>
+                        <SheetClose asChild>
+                            <Button variant="link" className="flex w-full items-center py-2 text-lg font-semibold" onClick={() => {
+                                router.push("/contact")
+                            }} >
+                                Contact
+                            </Button>
+                        </SheetClose>
+
                     </div>
                 </SheetContent>
             </Sheet>
-            <Link className="mr-6 hidden lg:flex" href="#">
+            <Link className="mr-6 hidden lg:flex" href="/">
                 <MountainIcon className="h-6 w-6" />
                 <span className="sr-only">Portfolio</span>
             </Link>
@@ -42,7 +57,7 @@ export default function NavBar() {
                 <NavigationMenuList>
                     <NavigationMenuLink asChild>
                         <Link
-                            className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+                            className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
                             href="/about"
                         >
                             About
@@ -50,7 +65,7 @@ export default function NavBar() {
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
                         <Link
-                            className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+                            className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
                             href="/projects"
                         >
                             Projects
@@ -58,7 +73,7 @@ export default function NavBar() {
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
                         <Link
-                            className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
+                            className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
                             href="/contact"
                         >
                             Contact

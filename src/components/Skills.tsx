@@ -5,7 +5,7 @@ export default function MySkills() {
             <section id="myProjects" />
             <section className="mt-12" id="skills">
                 <div className="space-y-6">
-                    <h2 className="text-5xl font-extrabold text-center">My Skills</h2>
+                    <h2 className="text-5xl font-extrabold text-primary text-center">My Skills</h2>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                         <ul className="space-y-4">
                             <li className="flex items-center gap-4">

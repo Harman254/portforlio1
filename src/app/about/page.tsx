@@ -8,11 +8,11 @@ export default function Page() {
     return (
         <div className="container mx-auto">
             <header className="px-4 sm:px-6 py-4  flex items-center justify-between">
-                <div className="text-2xl sm:text-3xl font-bold">Haman Malova</div>
+                <div className="text-2xl sm:text-3xl text-foreground font-bold">Haman Malova</div>
             </header>
             <main className="px-4 sm:px-6 py-12 space-y-6 sm:space-y-12">
                 <section className="space-y-2 sm:space-y-4">
-                    <h1 className="text-3xl sm:text-4xl font-bold">About Me</h1>
+                    <h1 className="text-3xl sm:text-4xl text-primary font-bold">About Me</h1>
                     <p className="text-gray-600 text-base sm:text-lg">
                         Brief description introducing yourself, including who you are, what you do, and your areas of expertise.
                     </p>
