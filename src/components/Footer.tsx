@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Footer() {
     return (
-        <footer className="flex flex-col gap-6 bg-gray-900 text-white p-6 md:p-12">
+        <footer className="flex flex-col gap-6  text-accent-foreground border p-6 md:p-12">
             <div className="flex flex-col md:flex-row justify-between items-start">
                 <div className="mb-4 md:mb-0">
                     <h3 className="text-lg font-semibold">Haman Malova</h3>
