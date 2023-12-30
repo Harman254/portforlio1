@@ -7,7 +7,7 @@ export default function Hero() {
             <div className="container mx-auto px-4 md:px-6 flex flex-col items-center space-y-4 text-center">
                 <div className="space-y-2">
                     <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-green-500 via-blue-600 to-primary bg-clip-text text-transparent">
-                        Haman Malova
+                        Harman Malova
                     </h1>
                     <p className="mx-auto max-w-[700px] text-lg font-semibold text-muted-foreground">Next.js 14 Developer</p>
                 </div>

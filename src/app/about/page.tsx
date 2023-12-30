@@ -8,7 +8,7 @@ export default function Page() {
     return (
         <div className="container mx-auto">
             <header className="px-4 sm:px-6 py-4  flex items-center justify-between">
-                <div className="text-2xl sm:text-3xl text-foreground font-bold">Haman Malova</div>
+                <div className="text-2xl sm:text-3xl text-foreground font-bold">Harman Malova</div>
             </header>
             <main className="px-4 sm:px-6 py-12 space-y-6 sm:space-y-12">
                 <section className="space-y-2 sm:space-y-4">
