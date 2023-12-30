@@ -3,6 +3,12 @@ import { Badge } from "@/components/ui/badge"
 import { CardHeader, CardContent, Card, CardFooter } from "@/components/ui/card"
 import { Avatar } from "@/components/ui/avatar"
 import Link from "next/link"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'About Me - Harman Malova - Modern web Portfolio',
+    description: 'Portfolio of Harman Malova',
+}
 
 export default function Page() {
     return (

@@ -10,8 +10,8 @@ import { ThemeProvider } from '@/providers/theme'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Modern Web',
-  description: 'App that simplifies modern web development using clerk and chakra ui',
+  title: 'Modern web Portfolio',
+  description: 'Portfolio of Harman Malova',
 }
 
 export default function RootLayout({

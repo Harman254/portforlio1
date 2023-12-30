@@ -2,6 +2,12 @@
 import { CardTitle, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'My Projects - Harman Malova',
+    description: 'projects done by Harman Malova',
+}
 
 export default function Page() {
     return (

@@ -1,7 +1,4 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/2S3N2owa8Jf
- */
+
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -9,6 +6,12 @@ import { Button } from "@/components/ui/button"
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
 import { CardHeader, CardContent, Card } from "@/components/ui/card"
 import Link from "next/link"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'Contact Harman Malova ',
+    description: 'this page contains contact information on  Harman Malova',
+}
 
 export default function Page() {
     return (
