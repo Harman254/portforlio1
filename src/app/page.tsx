@@ -1,11 +1,11 @@
 import Hero from "@/components/Hero";
-import MySkills from "@/components/Skills";
+import Skills from "@/components/exSkills";
 
 export default function Home() {
   return (
     <main className="container space-x-3 mx-auto pt-10">
       <Hero />
-      <MySkills />
+      <Skills />
     </main>
   )
 }
