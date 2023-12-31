@@ -4,194 +4,169 @@ import Image from "next/image"
 
 export default function Skills() {
     return (
-        <>
-            <h1 className="text-center text-3xl font-bold py-6">My Skills</h1>
-            <div className="w-full h-2 bg-gray-300 rounded-full">
-                <div className="h-full w-3/5 bg-green-400 rounded-full" />
+        <section className="w-full container mx-auto py-12 md:py-24 lg:py-32 xl:py-48  md:mx-6">
+            <div className="container px-4 md:px-6">
+                <h2 className="text-2xl font-bold text-center tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl/none mb-6">
+                    My Tech Stack
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="flex items-center shadow-md rounded-md p-4">
+                        <Image
+                            alt="html logo"
+                            className="rounded-full"
+                            height="50"
+                            src="/html.png"
+                            style={{
+                                aspectRatio: "50/50",
+                                objectFit: "cover",
+                            }}
+                            width="50"
+                        />
+                        <p className="ml-4 text-lg font-medium dark:text-gray-300">HTML</p>
+                    </div>
+                    <div className="flex items-center shadow-md rounded-md p-4">
+                        <Image
+                            alt="css logo"
+                            className="rounded-full"
+                            height="50"
+                            src="/css.png"
+                            style={{
+                                aspectRatio: "50/50",
+                                objectFit: "cover",
+                            }}
+                            width="50"
+                        />
+                        <p className="ml-4 text-lg font-medium dark:text-gray-300">css</p>
+                    </div>
+                    <div className="flex items-center shadow-md rounded-md p-4">
+                        <Image
+                            alt="javascript logo"
+                            className="rounded-full"
+                            height="50"
+                            src="/javascript.png"
+                            style={{
+                                aspectRatio: "50/50",
+                                objectFit: "cover",
+                            }}
+                            width="50"
+                        />
+                        <p className="ml-4 text-lg font-medium dark:text-gray-300">Javascript</p>
+                    </div>
+                    <div className="flex items-center  shadow-md rounded-md p-4">
+                        <Image
+                            alt="typescript logo"
+                            className="rounded-full"
+                            height="50"
+                            src="/typescript.png"
+                            style={{
+                                aspectRatio: "50/50",
+                                objectFit: "cover",
+                            }}
+                            width="50"
+                        />
+                        <p className="ml-4 text-lg font-medium dark:text-gray-300">TypeScript</p>
+                    </div>
+                    <div className="flex items-center shadow-md rounded-md p-4">
+                        <Image
+                            alt="react logo"
+                            className="rounded-full"
+                            height="50"
+                            src="/react.png"
+                            style={{
+                                aspectRatio: "50/50",
+                                objectFit: "cover",
+                            }}
+                            width="50"
+                        />
+                        <p className="ml-4 text-lg font-medium dark:text-gray-300">React</p>
+                    </div>
+                    <div className="flex items-center shadow-md rounded-md p-4">
+                        <Image
+                            alt="nextjs logo"
+                            className="rounded-full"
+                            height="50"
+                            src="/nextjs.png"
+                            style={{
+                                aspectRatio: "50/50",
+                                objectFit: "cover",
+                            }}
+                            width="50"
+                        />
+                        <p className="ml-4 text-lg font-medium dark:text-gray-300">NextJs</p>
+                    </div>
+                    <div className="flex items-center shadow-md rounded-md p-4">
+                        <Image
+                            alt="tailwind logo"
+                            className="rounded-full"
+                            height="50"
+                            src="/tailwind.png"
+                            style={{
+                                aspectRatio: "50/50",
+                                objectFit: "cover",
+                            }}
+                            width="50"
+                        />
+                        <p className="ml-4 text-lg font-medium dark:text-gray-300">Tailwind</p>
+                    </div>
+                    <div className="flex items-center shadow-md rounded-md p-4">
+                        <Image
+                            alt="database logo"
+                            className="rounded-full"
+                            height="50"
+                            src="/database.png"
+                            style={{
+                                aspectRatio: "50/50",
+                                objectFit: "cover",
+                            }}
+                            width="50"
+                        />
+                        <p className="ml-4 text-lg font-medium dark:text-gray-300">SQL</p>
+                    </div>
+                    <div className="flex items-center shadow-md rounded-md p-4">
+                        <Image
+                            alt="mongoDB logo"
+                            className="rounded-full"
+                            height="50"
+                            src="/mongodb.png"
+                            style={{
+                                aspectRatio: "50/50",
+                                objectFit: "cover",
+                            }}
+                            width="50"
+                        />
+                        <p className="ml-4 text-lg font-medium dark:text-gray-300">MongoDB</p>
+                    </div>
+                    <div className="flex items-center shadow-md rounded-md p-4">
+                        <Image
+                            alt="supabase logo"
+                            className="rounded-full"
+                            height="50"
+                            src="/supabase.png"
+                            style={{
+                                aspectRatio: "50/50",
+                                objectFit: "cover",
+                            }}
+                            width="50"
+                        />
+                        <p className="ml-4 text-lg font-medium dark:text-gray-300">Supabase</p>
+                    </div>
+                    <div className="flex items-center shadow-md rounded-md p-4">
+                        <Image
+                            alt="prisma logo"
+                            className="rounded-full"
+                            height="50"
+                            src="/prisma.png"
+                            style={{
+                                aspectRatio: "50/50",
+                                objectFit: "cover",
+                            }}
+                            width="50"
+                        />
+                        <p className="ml-4 text-lg font-medium dark:text-gray-300">Prisma</p>
+                    </div>
+                </div>
             </div>
-            <main className="container mx-auto px-6 md:px-8 lg:px-10 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <Card className="flex flex-col items-center p-4">
-                    <Image
-                        width={80}
-                        height={80}
-                        alt="HTML logo"
-                        className="block mb-2"
-                        src="/html.png"
-                        style={{
-                            aspectRatio: "80/80",
-                            objectFit: "cover",
-                        }}
-
-                    />
-                    <p className="text-center font-semibold">HTML</p>
-                </Card>
-                <Card className="flex flex-col items-center p-4">
-                    <Image
-                        width={80}
-                        height={80}
-                        alt="HTML logo"
-                        className="block mb-2"
-                        src="/css.png"
-                        style={{
-                            aspectRatio: "80/80",
-                            objectFit: "cover",
-                        }}
-
-                    />
-                    <p className="text-center font-semibold">CSS</p>
-                </Card>
-                <Card className="flex flex-col items-center p-4">
-                    <Image
-                        width={80}
-                        height={80}
-                        alt="HTML logo"
-                        className="block mb-2"
-                        src="/javascript.png"
-                        style={{
-                            aspectRatio: "80/80",
-                            objectFit: "cover",
-                        }}
-
-                    />
-                    <p className="text-center font-semibold">JavaScript</p>
-                </Card>
-                <Card className="flex flex-col items-center p-4">
-                    <Image
-                        width={80}
-                        height={80}
-                        alt="HTML logo"
-                        className="block mb-2"
-                        src="/react.png"
-                        style={{
-                            aspectRatio: "80/80",
-                            objectFit: "cover",
-                        }}
-
-                    />
-                    <p className="text-center font-semibold">React</p>
-                </Card>
-                <Card className="flex flex-col items-center p-4">
-                    <Image
-                        width={80}
-                        height={80}
-                        alt="HTML logo"
-                        className="block mb-2"
-                        src="/nextjs.png"
-                        style={{
-                            aspectRatio: "80/80",
-                            objectFit: "cover",
-                        }}
-
-                    />
-                    <p className="text-center font-semibold">Next.js</p>
-                </Card>
-                <Card className="flex flex-col items-center p-4">
-                    <Image
-                        width={80}
-                        height={80}
-                        alt="HTML logo"
-                        className="block mb-2"
-                        src="/typescript.png"
-                        style={{
-                            aspectRatio: "80/80",
-                            objectFit: "cover",
-                        }}
-
-                    />
-                    <p className="text-center font-semibold">TypeScript</p>
-                </Card>
-                <Card className="flex flex-col items-center p-4">
-                    <Image
-                        width={80}
-                        height={80}
-                        alt="HTML logo"
-                        className="block mb-2"
-                        src="/database.png"
-                        style={{
-                            aspectRatio: "80/80",
-                            objectFit: "cover",
-                        }}
-
-                    />
-                    <p className="text-center font-semibold">SQL</p>
-                </Card>
-                <Card className="flex flex-col items-center p-4">
-                    <Image
-                        width={80}
-                        height={80}
-                        alt="HTML logo"
-                        className="block mb-2"
-                        src="/tailwind.png"
-                        style={{
-                            aspectRatio: "80/80",
-                            objectFit: "cover",
-                        }}
-
-                    />
-                    <p className="text-center font-semibold">Tailwind</p>
-                </Card>
-                <Card className="flex flex-col items-center p-4">
-                    <Image
-                        width={80}
-                        height={80}
-                        alt="HTML logo"
-                        className="block mb-2"
-                        src="/mongodb.png"
-                        style={{
-                            aspectRatio: "80/80",
-                            objectFit: "cover",
-                        }}
-
-                    />
-                    <p className="text-center font-semibold">MongoDB</p>
-                </Card>
-                <Card className="flex flex-col items-center p-4">
-                    <Image
-                        width={80}
-                        height={80}
-                        alt="HTML logo"
-                        className="block mb-2"
-                        src="/supabase.png"
-                        style={{
-                            aspectRatio: "80/80",
-                            objectFit: "cover",
-                        }}
-
-                    />
-                    <p className="text-center font-semibold">Supabase</p>
-                </Card>
-                <Card className="flex flex-col items-center p-4">
-                    <Image
-                        width={80}
-                        height={80}
-                        alt="HTML logo"
-                        className="block mb-2"
-                        src="/git.png"
-                        style={{
-                            aspectRatio: "80/80",
-                            objectFit: "cover",
-                        }}
-
-                    />
-                    <p className="text-center font-semibold">Git</p>
-                </Card>
-                <Card className="flex flex-col items-center p-4">
-                    <Image
-                        width={80}
-                        height={80}
-                        alt="HTML logo"
-                        className="block mb-2"
-                        src="/prisma.png"
-                        style={{
-                            aspectRatio: "80/80",
-                            objectFit: "cover",
-                        }}
-
-                    />
-                    <p className="text-center font-semibold">Prisma</p>
-                </Card>
-            </main>
-        </>
+        </section>
     )
 }
 
