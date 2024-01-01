@@ -42,9 +42,9 @@ export default function Page() {
                             <div className="flex items-center space-x-2">
                                 <Avatar className="h-9 w-9">
                                     <AvatarImage alt="Your Name" src="/placeholder.svg?height=36&width=36" />
-                                    <AvatarFallback>YN</AvatarFallback>
+                                    <AvatarFallback>HM</AvatarFallback>
                                 </Avatar>
-                                <div className="text-lg font-bold">Your Name</div>
+                                <div className="text-lg font-bold">Harman Malova</div>
                             </div>
                         </CardHeader>
                         <CardContent>
@@ -52,13 +52,13 @@ export default function Page() {
                                 <div className="flex items-center space-x-2">
                                     <MailboxIcon className="w-4 h-4" />
                                     <Link className="underline text-blue-500" href="#">
-                                        your-email@example.com
+                                        Harmanmalova@gmail.com
                                     </Link>
                                 </div>
                                 <div className="flex items-center space-x-2">
                                     <PhoneIcon className="w-4 h-4" />
                                     <Link className="underline text-blue-500" href="#">
-                                        +1 (234) 567-890
+                                        +254757482842
                                     </Link>
                                 </div>
                             </div>
