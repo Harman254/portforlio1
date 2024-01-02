@@ -1,16 +1,36 @@
 
 import { Badge } from "@/components/ui/badge"
-import { CardHeader, CardContent, Card, CardFooter } from "@/components/ui/card"
+import { CardHeader, CardContent, Card, CardFooter, CardTitle } from "@/components/ui/card"
 import { Avatar } from "@/components/ui/avatar"
 import Link from "next/link"
 import { Metadata } from "next"
+import { sanityClient, urlFor } from "@/lib/sanity"
+import { Project } from "@/types/types"
+import Image from "next/image"
 
 export const metadata: Metadata = {
     title: 'About Me - Harman Malova - Modern web Portfolio',
     description: 'Portfolio of Harman Malova',
 }
 
-export default function Page() {
+async function getData() {
+    try {
+        const query = "*[_type == 'project']";
+        const data = await sanityClient.fetch(query);
+        const result = data.slice(0, 2)
+        console.log(result);
+        return result;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+
+export const revalidate = 0;
+export const dynamic = "force-dynamic"
+
+export default async function Page() {
+    const data: Project[] = await getData();
+    console.log(data);
     return (
         <div className="container mx-auto">
             <header className="px-4 sm:px-6 py-4  flex items-center justify-between">
@@ -83,52 +103,26 @@ export default function Page() {
                 <section className="space-y-2 sm:space-y-4">
                     <h2 className="text-2xl sm:text-3xl text-primary tracking-tighter font-bold">Portfolio</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <Card>
-                            <CardHeader>
-                                <h3 className="font-bold">Project Name</h3>
-                            </CardHeader>
-                            <CardContent>
-                                <div className="space-y-2">
-                                    <img
-                                        alt="Project Screenshot"
-                                        height="200"
-                                        src="/placeholder.svg"
-                                        style={{
-                                            aspectRatio: "200/200",
-                                            objectFit: "cover",
-                                        }}
-                                        width="200"
+
+                        {data && data.map((project: Project) => (
+                            <Card key={project._id}>
+                                <CardHeader>
+                                    <CardTitle>{project.name}</CardTitle>
+                                </CardHeader>
+                                <CardContent className="grid gap-4 border-y py-4">
+                                    <Image
+                                        alt={project.name}
+                                        className="w-full aspect-[3/2] object-cover"
+                                        height={200}
+                                        src={urlFor(project.image).url()}
+                                        width={300}
                                     />
-                                    <p>Project description.</p>
-                                    <Link className="underline text-blue-600" href="#">
-                                        Link to live website or GitHub repository
+                                    <Link className="text-blue-500 hover:underline" href={project.link}>
+                                        View Project
                                     </Link>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <CardHeader>
-                                <h3 className="font-bold">Project Name</h3>
-                            </CardHeader>
-                            <CardContent>
-                                <div className="space-y-2">
-                                    <img
-                                        alt="Project Screenshot"
-                                        height="200"
-                                        src="/placeholder.svg"
-                                        style={{
-                                            aspectRatio: "200/200",
-                                            objectFit: "cover",
-                                        }}
-                                        width="200"
-                                    />
-                                    <p>Project description.</p>
-                                    <Link className="underline text-blue-600" href="#">
-                                        Link to live website or GitHub repository
-                                    </Link>
-                                </div>
-                            </CardContent>
-                        </Card>
+                                </CardContent>
+                            </Card>
+                        ))}
                     </div>
                 </section>
                 <section className="space-y-2 sm:space-y-4">

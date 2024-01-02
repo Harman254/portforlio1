@@ -4,29 +4,10 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Metadata } from "next"
 import { sanityClient, urlFor } from "@/lib/sanity"
+import { Project } from "@/types/types"
+import Image from "next/image"
 
-interface Project {
-    image: {
-        _type: 'image';
-        asset: {
-            _ref: string;
-            _type: 'reference';
-        };
-    };
-    _createdAt: string;
-    _rev: string;
-    link: string;
-    description: string;
-    _updatedAt: string;
-    date: string;
-    _type: 'project';
-    name: string;
-    _id: string;
-    slug: {
-        _type: 'slug';
-        current: string;
-    };
-}
+
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0
@@ -61,7 +42,7 @@ export default async function Page() {
                                     <CardTitle className="text-lg md:text-xl lg:text-2xl font-bold">{project.name}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <img
+                                    <Image
                                         alt={`Project ${project.name}`}
                                         className="w-full h-auto"
                                         height="200"

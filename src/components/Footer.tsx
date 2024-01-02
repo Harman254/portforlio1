@@ -26,7 +26,7 @@ export default function Footer() {
                 </nav>
             </div>
             <div className="flex flex-col md:flex-row justify-between items-center">
-                <p className="text-sm mb-4 md:mb-0">© 2023 by Haman Malova.</p>
+                <p className="text-sm mb-4 md:mb-0">© 2023 by Harman Malova.</p>
                 <div className="flex space-x-4">
                     <Link className="text-lg" href="#">
                         <FacebookIcon className="w-4 h-4" />
