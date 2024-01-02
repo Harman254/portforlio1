@@ -7,6 +7,7 @@ import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
 import { CardHeader, CardContent, Card } from "@/components/ui/card"
 import Link from "next/link"
 import { Metadata } from "next"
+import { contactAction } from "@/actions/contact"
 
 export const metadata: Metadata = {
     title: 'Contact Harman Malova ',
@@ -19,21 +20,21 @@ export default function Page() {
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6 max-w-6xl mx-auto">
                 <div className="w-full md:w-1/2 space-y-8">
                     <h1 className="text-4xl text-primary font-bold">Contact Me</h1>
-                    <div className="space-y-4">
+                    <form action={contactAction} className="space-y-4">
                         <div className="space-y-2">
                             <Label htmlFor="name">Name</Label>
-                            <Input id="name" placeholder="Enter your name" />
+                            <Input name="name" placeholder="Enter your name" />
                         </div>
                         <div className="space-y-2">
                             <Label htmlFor="email">Email</Label>
-                            <Input id="email" placeholder="Enter your email" type="email" />
+                            <Input name="email" placeholder="Enter your email" type="email" />
                         </div>
                         <div className="space-y-2">
                             <Label htmlFor="message">Message</Label>
-                            <Textarea className="min-h-[100px]" id="message" placeholder="Enter your message" />
+                            <Textarea className="min-h-[100px]" name="message" placeholder="Enter your message" />
                         </div>
-                        <Button>Submit</Button>
-                    </div>
+                        <Button type="submit">Submit</Button>
+                    </form>
                 </div>
                 <div className="w-full md:w-1/2 space-y-6">
                     <h2 className="text-3xl text-primary font-bold">My Contact Info</h2>
