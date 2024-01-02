@@ -110,12 +110,12 @@ export default async function Page() {
                                     <CardTitle>{project.name}</CardTitle>
                                 </CardHeader>
                                 <CardContent className="grid gap-4 border-y py-4">
-                                    <Image
+                                    <img
                                         alt={project.name}
                                         className="w-full aspect-[3/2] object-cover"
-                                        height={200}
+                                        height="200"
                                         src={urlFor(project.image).url()}
-                                        width={300}
+                                        width="300"
                                     />
                                     <Link className="text-blue-500 hover:underline" href={project.link}>
                                         View Project
@@ -130,7 +130,7 @@ export default async function Page() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <Card>
                             <CardContent>
-                                <p>
+                                <p className="mt-3">
                                     "Collaborating with Harman during our time at Nairobi City County Government was truly enlightening. He demonstrated exceptional leadership and a keen understanding of HR processes. His ability to navigate complex situations, coupled with his dedication to fostering a positive work environment, made a significant impact on our team. He provided invaluable insights and guidance, reflecting his deep knowledge and commitment to the field of human resources. It was a pleasure working with Harman, and I would highly recommend his expertise to any organization.</p>
                             </CardContent>
                             <CardFooter className="space-x-4">
@@ -140,7 +140,7 @@ export default async function Page() {
                         </Card>
                         <Card>
                             <CardContent>
-                                <p>"It was a pleasure to have Harman as a student. He demonstrated a strong commitment to academic excellence and enriched class discussions with insightful contributions. Harman possesses a remarkable blend of analytical skills and creativity. I have no doubt that he will continue to excel in his professional journey."</p>
+                                <p className="mt-3">"It was a pleasure to have Harman as a student. He demonstrated a strong commitment to academic excellence and enriched class discussions with insightful contributions. Harman possesses a remarkable blend of analytical skills and creativity. I have no doubt that he will continue to excel in his professional journey."</p>
                             </CardContent>
                             <CardFooter className="space-x-4">
                                 <h3 className="font-bold">Lydia Mark</h3>

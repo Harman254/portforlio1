@@ -42,7 +42,7 @@ export default async function Page() {
                                     <CardTitle className="text-lg md:text-xl lg:text-2xl font-bold">{project.name}</CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <Image
+                                    <img
                                         alt={`Project ${project.name}`}
                                         className="w-full h-auto"
                                         height="200"
