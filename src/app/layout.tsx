@@ -5,6 +5,7 @@ import { ClerkProviderContext } from '@/providers/clerk'
 import Navbar from '@/components/Nav/Navbar'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/providers/theme'
+import { Toaster } from '@/components/ui/sonner'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -32,6 +33,7 @@ export default function RootLayout({
           >
 
             <Navbar />
+            <Toaster /> 
 
             {children}
             <Footer />

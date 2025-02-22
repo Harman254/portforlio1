@@ -1,4 +1,3 @@
-
 import { CardTitle, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -37,7 +36,8 @@ export default async function Page() {
                     data.map((project: Project) => {
 
                         return (
-                            <Card key={project._id}>
+                            <Card key={project._id} className="group bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-lg">
+                              <Link href={project.link}>
                                 <CardHeader>
                                     <CardTitle className="text-lg md:text-xl lg:text-2xl font-bold">{project.name}</CardTitle>
                                 </CardHeader>
@@ -45,7 +45,7 @@ export default async function Page() {
                                     <img
                                         alt={`Project ${project.name}`}
                                         className="w-full h-auto"
-                                        height="200"
+                                        height="280"
                                         src={urlFor(project.image).url()}
                                         style={{
                                             aspectRatio: '200/200',
@@ -53,15 +53,15 @@ export default async function Page() {
                                         }}
                                         width="200"
                                     />
-                                    <p className="text-sm md:text-base line-clamp-6	 lg:text-lg text-gray-500 mt-2">{project.description}</p>
+                                    <p className="text-sm md:text-base lg:text-lg text-gray-500 mt-2 line-clamp-6">{project.description}</p>
                                 </CardContent>
                                 <CardFooter>
-                                    <Link className="text-blue-500 hover:underline" href={project.link}>
-                                        Learn more
-                                    </Link>
+                                    
                                 </CardFooter>
+                              </Link>
                             </Card>)
                     })
+
                 ) : (
                     <div className="text-center">No projects found</div>
                 )}

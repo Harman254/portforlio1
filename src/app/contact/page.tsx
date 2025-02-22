@@ -1,4 +1,6 @@
+"use client"
 
+import { useRef } from "react"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -6,21 +8,33 @@ import { Button } from "@/components/ui/button"
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
 import { CardHeader, CardContent, Card } from "@/components/ui/card"
 import Link from "next/link"
-import { Metadata } from "next"
 import { contactAction } from "@/actions/contact"
+import { toast } from "sonner"
 
-export const metadata: Metadata = {
-    title: 'Contact Harman Malova ',
-    description: 'this page contains contact information on  Harman Malova',
-}
 
 export default function Page() {
+    const formRef = useRef<HTMLFormElement>(null);
+
+    const handleSubmit = async (formData: FormData) => {
+        const result = await contactAction(formData);
+        if (result.success) {
+            toast("Email sent successfully");
+            formRef.current?.reset();
+        } else {
+            toast("Not sent");
+        }
+    };
+
     return (
         <main className="p-6 md:p-12 container mx-auto min-h-screen">
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6 max-w-6xl mx-auto">
                 <div className="w-full md:w-1/2 space-y-8">
                     <h1 className="text-4xl text-primary font-bold">Contact Me</h1>
-                    <form action={contactAction} className="space-y-4">
+                    <form 
+                        ref={formRef}
+                        action={handleSubmit} 
+                        className="space-y-4"
+                    >
                         <div className="space-y-2">
                             <Label htmlFor="name">Name</Label>
                             <Input name="name" placeholder="Enter your name" />
@@ -59,7 +73,7 @@ export default function Page() {
                                 <div className="flex items-center space-x-2">
                                     <PhoneIcon className="w-4 h-4" />
                                     <Link className="underline text-blue-500" href="#">
-                                        +254757482842
+                                        +254700000000
                                     </Link>
                                 </div>
                             </div>
