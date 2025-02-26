@@ -1,6 +1,5 @@
 "use server";
 import {Resend} from "resend";
-import { Client } from "@/types/types";
 import { sanityClient } from "@/lib/sanity";
 
 export const contactAction = async (formData: FormData) => {
