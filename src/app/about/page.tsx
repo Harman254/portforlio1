@@ -27,34 +27,32 @@ async function getData() {
 export const revalidate = 0;
 export const dynamic = "force-dynamic"
 
-export default async function Page() {
-    const data: Project[] = await getData();
-    console.log(data);
+export default function Page() {
     return (
         <div className="container mx-auto px-4 py-8">
-            <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-purple-600 to-blue-500 text-transparent bg-clip-text">
+            <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text dark:from-purple-400 dark:to-blue-400">
                 About Me
             </h1>
 
             <div className="grid md:grid-cols-3 gap-8 items-start">
                 {/* Profile Section */}
-                <Card className="md:col-span-1 p-6 bg-white/50 backdrop-blur-sm border border-gray-200">
+                <Card className="md:col-span-1 p-6 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 shadow-xl">
                     <Image
                         src="/Profile.jpg"
                         alt="Your Name"
                         width={400}
                         height={400}
-                        className="rounded-xl shadow-lg mb-6 hover:scale-[1.02] transition-transform duration-300"
+                        className="rounded-xl shadow-lg mb-6 hover:scale-[1.02] transition-transform duration-300 ring-2 ring-purple-500/20 dark:ring-purple-400/20"
                     />
-                    <h2 className="text-2xl font-semibold mb-2">Harman Malova</h2>
-                    <p className="text-gray-600 mb-6">Web Developer & Designer</p>
+                    <h2 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">Harman Malova</h2>
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">Web Developer & Designer</p>
                     
                     <div className="space-y-4">
                         <div className="flex items-center group">
-                            <div className="p-2 rounded-full bg-gray-100 group-hover:bg-purple-100 transition-colors duration-300">
+                            <div className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 group-hover:bg-purple-100 dark:group-hover:bg-purple-900/50 transition-colors duration-300">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="h-5 w-5 text-gray-600 group-hover:text-purple-600"
+                                    className="h-5 w-5 text-gray-600 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-300"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -67,14 +65,14 @@ export default async function Page() {
                                     />
                                 </svg>
                             </div>
-                            <span className="ml-3">Based in Nairobi, Kenya</span>
+                            <span className="ml-3 text-gray-800 dark:text-gray-200">Based in Nairobi, Kenya</span>
                         </div>
                         
                         <div className="flex items-center group">
-                            <div className="p-2 rounded-full bg-gray-100 group-hover:bg-purple-100 transition-colors duration-300">
+                            <div className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 group-hover:bg-purple-100 dark:group-hover:bg-purple-900/50 transition-colors duration-300">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="h-5 w-5 text-gray-600 group-hover:text-purple-600"
+                                    className="h-5 w-5 text-gray-600 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-300"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -87,39 +85,42 @@ export default async function Page() {
                                     />
                                 </svg>
                             </div>
-                            <span className="ml-3">Harmanmalova@gmail.com</span>
+                            <span className="ml-3 text-gray-800 dark:text-gray-200">Harmanmalova@gmail.com</span>
                         </div>
                     </div>
                 </Card>
 
                 {/* Main Content */}
                 <div className="md:col-span-2 space-y-8">
-                    <Card className="p-8 bg-white/50 backdrop-blur-sm border border-gray-200">
-                        <h2 className="text-2xl font-semibold mb-6">My Story</h2>
-                        <div className="space-y-4 text-gray-700">
+                    <Card className="p-8 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 shadow-xl">
+                        <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">My Story</h2>
+                        <div className="space-y-4 text-gray-700 dark:text-gray-300">
                             <p className="leading-relaxed">
-                                Hello! I'm [Your Name], a passionate web developer and designer with [X] years of experience in creating
-                                beautiful and functional websites. My journey in tech began [brief background on how you started].
+                                Hello! I'm Harman Malova, a passionate web developer and designer with experience in creating
+                                beautiful and functional websites. My journey in tech began with a deep curiosity about how websites work.
                             </p>
                             <p className="leading-relaxed">
-                                I specialize in [your main areas of expertise, e.g., front-end development, UI/UX design, etc.]. My approach
-                                to web development is [your philosophy or approach to your work].
+                                I specialize in front-end development, UI/UX design, and building modern web applications. My approach
+                                to web development focuses on creating intuitive and efficient solutions.
                             </p>
                             <p className="leading-relaxed">
-                                When I'm not coding, you can find me [your hobbies or interests outside of work]. I believe that [a personal
-                                belief or value related to your work or life].
+                                When I'm not coding, you can find me exploring new technologies and contributing to open-source projects.
                             </p>
                         </div>
                     </Card>
 
-                    <Card className="p-8 bg-white/50 backdrop-blur-sm border border-gray-200">
-                        <h2 className="text-2xl font-semibold mb-6">Skills</h2>
+                    <Card className="p-8 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 shadow-xl">
+                        <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Skills</h2>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                             {["JavaScript", "React", "Node.js", "HTML/CSS", "UI/UX Design", "Git"].map((skill) => (
                                 <div 
                                     key={skill} 
-                                    className="bg-white rounded-lg px-4 py-3 text-center shadow-sm border border-gray-100 
-                                    hover:shadow-md hover:border-purple-200 transition-all duration-300"
+                                    className="bg-white dark:bg-gray-800 rounded-lg px-4 py-3 text-center 
+                                        border border-purple-100 dark:border-purple-900 hover:shadow-md 
+                                        hover:border-purple-300 dark:hover:border-purple-700 
+                                        hover:bg-purple-50 dark:hover:bg-purple-900/30
+                                        transition-all duration-300
+                                        text-gray-800 dark:text-gray-200"
                                 >
                                     {skill}
                                 </div>
@@ -127,20 +128,20 @@ export default async function Page() {
                         </div>
                     </Card>
 
-                    <Card className="p-8 bg-white/50 backdrop-blur-sm border border-gray-200">
-                        <h2 className="text-2xl font-semibold mb-6">Experience & Education</h2>
+                    <Card className="p-8 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 shadow-xl">
+                        <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Experience & Education</h2>
                         <div className="space-y-6">
-                            <div className="border-l-2 border-purple-200 pl-6 relative">
-                                <div className="absolute w-3 h-3 bg-purple-400 rounded-full -left-[7px] top-2"></div>
-                                <h3 className="font-semibold text-lg">Web Developer at TechCorp</h3>
-                                <p className="text-gray-600">2020 - Present</p>
-                                <p className="mt-2">Brief description of your role and key achievements.</p>
+                            <div className="border-l-2 border-purple-300 dark:border-purple-600 pl-6 relative">
+                                <div className="absolute w-3 h-3 bg-purple-400 dark:bg-purple-500 rounded-full -left-[7px] top-2 ring-4 ring-purple-100 dark:ring-purple-900"></div>
+                                <h3 className="font-semibold text-lg text-gray-900 dark:text-white">Web Developer at TechCorp</h3>
+                                <p className="text-gray-600 dark:text-gray-400">2020 - Present</p>
+                                <p className="mt-2 text-gray-700 dark:text-gray-300">Brief description of your role and key achievements.</p>
                             </div>
                             
-                            <div className="border-l-2 border-purple-200 pl-6 relative">
-                                <div className="absolute w-3 h-3 bg-purple-400 rounded-full -left-[7px] top-2"></div>
-                                <h3 className="font-semibold text-lg">BS in Computer Science</h3>
-                                <p className="text-gray-600">University Name, Graduated 2019</p>
+                            <div className="border-l-2 border-purple-300 dark:border-purple-600 pl-6 relative">
+                                <div className="absolute w-3 h-3 bg-purple-400 dark:bg-purple-500 rounded-full -left-[7px] top-2 ring-4 ring-purple-100 dark:ring-purple-900"></div>
+                                <h3 className="font-semibold text-lg text-gray-900 dark:text-white">BS in Computer Science</h3>
+                                <p className="text-gray-600 dark:text-gray-400">University Name, Graduated 2019</p>
                             </div>
                         </div>
                     </Card>

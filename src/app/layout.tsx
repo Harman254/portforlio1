@@ -6,6 +6,8 @@ import Navbar from '@/components/Nav/Navbar'
 import Footer from '@/components/Footer'
 import { ThemeProvider } from '@/providers/theme'
 import { Toaster } from '@/components/ui/sonner'
+import { Suspense } from "react";
+import { LoadingSpinner } from "@/components/ui/loading";
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -35,7 +37,9 @@ export default function RootLayout({
             <Navbar />
             <Toaster /> 
 
-            {children}
+            <Suspense fallback={<LoadingSpinner />}>
+              {children}
+            </Suspense>
             <Footer />
           </ThemeProvider>
 

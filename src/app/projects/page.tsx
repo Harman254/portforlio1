@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Metadata } from "next"
 import { sanityClient, urlFor } from "@/lib/sanity"
 import { Project } from "@/types/types"
-import Image from "next/image"
+
 
 
 

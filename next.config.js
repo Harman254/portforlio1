@@ -3,7 +3,8 @@ const nextConfig = {
     images: {
         domains: [ 'cdn.sanity.io'],
     },
-    runtime: 'nodejs'
+    runtime: 'nodejs',
+    transpilePackages: ['framer-motion']
 }
 
 module.exports = nextConfig
