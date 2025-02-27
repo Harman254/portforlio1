@@ -1,10 +1,5 @@
-import { Badge } from "@/components/ui/badge"
-import { CardHeader, CardContent, Card, CardFooter, CardTitle } from "@/components/ui/card"
-import { Avatar } from "@/components/ui/avatar"
-import Link from "next/link"
+import { Card } from "@/components/ui/card"
 import { Metadata } from "next"
-import { sanityClient, urlFor } from "@/lib/sanity"
-import { Project } from "@/types/types"
 import Image from "next/image"
 
 export const metadata: Metadata = {
@@ -12,20 +7,7 @@ export const metadata: Metadata = {
     description: 'Portfolio of Harman Malova',
 }
 
-async function getData() {
-    try {
-        const query = "*[_type == 'project']";
-        const data = await sanityClient.fetch(query);
-        const result = data.slice(0, 2)
-        console.log(result);
-        return result;
-    } catch (error) {
-        console.error('Error fetching data:', error);
-    }
-}
 
-export const revalidate = 0;
-export const dynamic = "force-dynamic"
 
 export default function Page() {
     return (
@@ -112,7 +94,7 @@ export default function Page() {
                     <Card className="p-8 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border border-gray-200/50 dark:border-gray-700/50 shadow-xl">
                         <h2 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Skills</h2>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            {["JavaScript", "React", "Node.js", "HTML/CSS", "UI/UX Design", "Git"].map((skill) => (
+                            {["JavaScript", "React", "Next.js", "Typescript", "Supabase", "Git & Github"].map((skill) => (
                                 <div 
                                     key={skill} 
                                     className="bg-white dark:bg-gray-800 rounded-lg px-4 py-3 text-center 
@@ -135,13 +117,13 @@ export default function Page() {
                                 <div className="absolute w-3 h-3 bg-purple-400 dark:bg-purple-500 rounded-full -left-[7px] top-2 ring-4 ring-purple-100 dark:ring-purple-900"></div>
                                 <h3 className="font-semibold text-lg text-gray-900 dark:text-white">Web Developer at TechCorp</h3>
                                 <p className="text-gray-600 dark:text-gray-400">2020 - Present</p>
-                                <p className="mt-2 text-gray-700 dark:text-gray-300">Brief description of your role and key achievements.</p>
+                                <p className="mt-2 text-gray-700 dark:text-gray-300">I have been working as a web developer for the past 5 years. I have a passion for creating beautiful and functional websites.</p>
                             </div>
                             
                             <div className="border-l-2 border-purple-300 dark:border-purple-600 pl-6 relative">
                                 <div className="absolute w-3 h-3 bg-purple-400 dark:bg-purple-500 rounded-full -left-[7px] top-2 ring-4 ring-purple-100 dark:ring-purple-900"></div>
                                 <h3 className="font-semibold text-lg text-gray-900 dark:text-white">BS in Computer Science</h3>
-                                <p className="text-gray-600 dark:text-gray-400">University Name, Graduated 2019</p>
+                                <p className="text-gray-600 dark:text-gray-400">JKUAT, Graduated 2022</p>
                             </div>
                         </div>
                     </Card>

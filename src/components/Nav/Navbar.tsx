@@ -5,144 +5,107 @@ import { SheetTrigger, SheetContent, Sheet, SheetClose } from "@/components/ui/s
 import Link from "next/link"
 import { NavigationMenuLink, NavigationMenuList, NavigationMenu } from "@/components/ui/navigation-menu"
 import { ModeToggle } from "../ModeToggle"
+import { Menu, Mountain } from "lucide-react"
+
+// Define icons as components
+const MenuIcon = Menu
+const MountainIcon = Mountain
 
 export default function NavBar() {
     const router = useRouter()
     return (
-        <header className="flex h-20 w-full shrink-0 items-center container mx-auto px-4 md:px-6">
-            <Sheet>
-                <SheetTrigger asChild>
-                    <Button className="lg:hidden" size="icon" variant="outline">
-                        <MenuIcon className="h-6 w-6 " />
-                        <span className="sr-only">Toggle navigation menu</span>
-                    </Button>
-                </SheetTrigger>
-                <SheetContent side="left">
-                    <SheetClose asChild>
-                        <Link href="/">
-                            <MountainIcon className="h-6 w-6" />
-                            <span className="sr-only">Portfolio</span>
-                        </Link>
-                    </SheetClose>
-                    <ModeToggle />
-                    <div className="grid gap-2 py-6">
-                        <SheetClose asChild>
-                            <Button variant="link" className="flex w-full items-center py-2 text-lg font-semibold" onClick={() => {
-                                router.push("/about")
-                            }} >
-                                About
-                            </Button>
-                        </SheetClose>
-                        <SheetClose asChild>
-                            <Button variant="link" className="flex w-full items-center py-2 text-lg font-semibold" onClick={() => {
-                                router.push("/projects")
-                            }} >
-                                Projects
-                            </Button>
-                        </SheetClose>
-                        <SheetClose asChild>
-                            <Button variant="link" className="flex w-full items-center py-2 text-lg font-semibold" onClick={() => {
-                                router.push("/contact")
-                            }} >
-                                Contact
-                            </Button>
-                        </SheetClose>
-                        <SheetClose asChild>
-                            <Button variant="link" className="flex w-full items-center py-2 text-lg font-semibold" onClick={() => {
-                                router.push("/dashboard")
-                            }} >
-                                Dashboard
-                            </Button>
-                        </SheetClose>
+        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <div className="container flex h-14 max-w-screen-2xl items-center">
+                <Sheet>
+                    <SheetTrigger asChild>
+                        <Button className="lg:hidden" size="icon" variant="ghost">
+                            <MenuIcon className="h-6 w-6" />
+                            <span className="sr-only">Toggle navigation menu</span>
+                        </Button>
+                    </SheetTrigger>
+                    <SheetContent side="left">
+                        <nav className="flex flex-col gap-4">
+                            <Link href="/" className="flex items-center gap-2">
+                                <MountainIcon className="h-6 w-6" />
+                                <span className="font-bold">Portfolio</span>
+                            </Link>
+                            <div className="grid gap-2">
+                                <Link href="/about" className="flex w-full items-center py-2 text-lg font-semibold">
+                                    About
+                                </Link>
+                                <Link href="/projects" className="flex w-full items-center py-2 text-lg font-semibold">
+                                    Projects
+                                </Link>
+                                <Link href="/contact" className="flex w-full items-center py-2 text-lg font-semibold">
+                                    Contact
+                                </Link>
+                                <Link href="/dashboard" className="flex w-full items-center py-2 text-lg font-semibold">
+                                    Dashboard
+                                </Link>
+                            </div>
+                            <div className="flex items-center">
+                                <ModeToggle />
+                            </div>
+                        </nav>
+                    </SheetContent>
+                </Sheet>
 
+                <div className="mr-4 hidden lg:flex">
+                    <Link className="mr-6 flex items-center space-x-2" href="/">
+                        <MountainIcon className="h-6 w-6" />
+                        <span className="font-bold inline-block">Portfolio</span>
+                    </Link>
+                    <NavigationMenu>
+                        <NavigationMenuList>
+                            <NavigationMenuLink asChild>
+                                <Link
+                                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                    href="/about"
+                                >
+                                    About
+                                </Link>
+                            </NavigationMenuLink>
+                            <NavigationMenuLink asChild>
+                                <Link
+                                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                    href="/projects"
+                                >
+                                    Projects
+                                </Link>
+                            </NavigationMenuLink>
+                            <NavigationMenuLink asChild>
+                                <Link
+                                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                    href="/contact"
+                                >
+                                    Contact
+                                </Link>
+                            </NavigationMenuLink>
+                            <NavigationMenuLink asChild>
+                                <Link
+                                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                                    href="/dashboard"
+                                >
+                                    Dashboard
+                                </Link>
+                            </NavigationMenuLink>
+                        </NavigationMenuList>
+                    </NavigationMenu>
+                </div>
+
+                <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
+                    <div className="w-full flex-1 md:w-auto md:flex-none">
+                        <div className="hidden lg:flex items-center">
+                            <ModeToggle />
+                        </div>
                     </div>
-                </SheetContent>
-            </Sheet>
-            <Link className="mr-6 hidden lg:flex" href="/">
-                <MountainIcon className="h-6 w-6" />
-                <span className="sr-only">Portfolio</span>
-            </Link>
-            <NavigationMenu className="hidden lg:flex">
-                <NavigationMenuList>
-                    <ModeToggle />
-                    <NavigationMenuLink asChild>
-                        <Link
-                            className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
-                            href="/about"
-                        >
-                            About
+                    <nav className="flex items-center">
+                        <Link href="/contact" passHref>
+                            <Button>Get in Touch</Button>
                         </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                        <Link
-                            className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
-                            href="/projects"
-                        >
-                            Projects
-                        </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                        <Link
-                            className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
-                            href="/contact"
-                        >
-                            Contact
-                        </Link>
-                    </NavigationMenuLink>
-                    <NavigationMenuLink asChild>
-                        <Link
-                            className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
-                            href="/dashboard"
-                        >
-                            Dashboard
-                        </Link>
-                    </NavigationMenuLink>
-                </NavigationMenuList>
-            </NavigationMenu>
-            <div className="ml-auto">
-                <Button onClick={() => router.push("/contact")}>Get in Touch</Button>
+                    </nav>
+                </div>
             </div>
         </header>
-    )
-}
-
-function MenuIcon(props: any) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <line x1="4" x2="20" y1="12" y2="12" />
-            <line x1="4" x2="20" y1="6" y2="6" />
-            <line x1="4" x2="20" y1="18" y2="18" />
-        </svg>
-    )
-}
-
-
-function MountainIcon(props: any) {
-    return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-        </svg>
     )
 }
